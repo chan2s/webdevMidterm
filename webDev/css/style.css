@@ -1,13 +1,15 @@
-.navbar {
-    padding: 20px 10px;
-    background-color: rgb(0, 0, 0) !important;
-    border: none !important;
-}
-
 body {
     background-color: rgb(12, 7, 32) !important; 
     /* background-image:url("/webdev3/webDev/img/bodybgimage.png"); */
     font-family: sans-serif;
+}
+/* --- Navbar CSS Code --- */
+
+/* Original Styles */
+.navbar {
+    padding: 20px 10px;
+    background-color: rgb(0, 0, 0) !important;
+    border: none !important;
 }
 
 .navbar-menu li a {
@@ -18,12 +20,8 @@ body {
     font-size: 1rem;
     border-bottom: none !important;
     transition: color 0.3s ease;
-    /* padding: none !important; */
-}
-
-.navbar-menu li a:hover {
-    color: black !important;
-    background-color: transparent !important;
+    /* Applying a more stylish font for nav links */
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar-toggle {
@@ -37,6 +35,30 @@ body {
 
 .navbar-inverse .navbar-collapse {
     border-color: transparent !important;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    margin-top: -10px; 
+}
+
+.navbar-menu li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f0ad4e; 
+    transition: width .3s;
+    margin-top: 4px;
+}
+
+.navbar-menu li a:hover {
+    color: #f0ad4e !important; 
+    background-color: transparent !important; 
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
 }
 
 #slider {
@@ -78,7 +100,6 @@ body {
 
 .cta-div {
     margin-top: 30px;
-     
 }
 
 .btn1, .btn2 {
@@ -206,55 +227,119 @@ body {
     -moz-animation: blink 0.7s infinite;
 }
 
-/* content */
-p{
+/* Improved container2 styles for typical paragraph design */
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container2 > .p, .container2 > .second_text, .container2 > .third_text {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Remove specific text alignment for second_text and third_text to ensure consistency */
+.second_text, .third_text {
+    padding: 20px;
+}
+
+/* Improved w3-container and card styles */
+.w3-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.w3-container .w3-card-4 {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+}
+
+.w3-container .w3-card-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.w3-container h2 {
+    color: #f0ad4e;
+    font-size: 1.8rem;
+    margin: 15px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.w3-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.w3-container .w3-container.w3-center p {
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 768px) {
+    .w3-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .w3-container .w3-card-4 {
+        max-width: 100%;
+    }
+
+    .container2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container2 > .p, .container2 > .second_text, .container2 > .third_text {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .w3-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .w3-container .w3-container.w3-center p {
+        font-size: 1rem;
+    }
+}
+
+/* Existing content styles */
+p {
     font-size: larger;
     color: white;
     text-align: center;
-    /* background-color: rgb(19, 7, 91); */
     font-weight: bold;
     padding: 8% 10%;
 }
-.p{
-        border: transparent;
-    
+
+.p {
+    border: transparent;
 }
 
-footer{
+footer {
+    size: 20px;
     color: white;
     text-align: center;
     font-style: italic;
-}
-.second_text{
-    text-align: left;
-    padding-right: 50%;
-}
-.third_text{
-    text-align: right;
-    padding-left: 50%;
-}
-.container2{
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-}
-.container2> p,.second_text,.third_text{
-    
-     padding: 10px;
-  font-size: 20px;
-  text-align: center;
-    
-}
-.w3-container{
-    /* display: inline !important; */
-   /* display: flex;
-  justify-content: center; /* Centers horizontally */
-  /* align-items: center;  */
-  /* height: 50vh; */
-   */
-}
-.w3-container,h2{
-
-    color: yellow;
-    
 }
